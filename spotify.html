@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="logo.png" />
+    <title>Spotify - Web Player: Music for everyone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&
+      family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;
+      1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- 1) Sidebar -->
+      <div class="sidebar">
+        <!-- a)Nav Bar -->
+        <div class="nav">
+          <div class="nav-option" style="opacity: 1">
+            <i class="fa-solid fa-house"></i>
+            <a href="https://open.spotify.com/">Home</a>
+          </div>
+          <div class="nav-option">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="https://open.spotify.com/search">Search</a>
+          </div>
+        </div>
+
+        <!-- b)Library Bar -->
+        <div class="library">
+          <div class="options">
+            <div class="lib-option nav-option">
+              <img src="library_icon.png" alt="no image" />
+              <a href="https://open.spotify.com/">Your Library</a>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="lib-box">
+            <p class="box-p1">Create your first playlist</p>
+            <p class="box-p2">It's easy, we'll help you</p>
+            <button class="badge">Create playlist</button>
+          </div>
+          <div class="lib-box" style="height: 9rem">
+            <p class="box-p1">Let's find some podcast to follow</p>
+            <p class="box-p2">We'll keep you updated on new episodes</p>
+            <button class="badge">Browse podcasts</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1) Sidebar -->
+      <div class="main-content">
+        <div class="sticky-nav">
+          <div class="sticky-nav-icons">
+            <img src="backward_icon.png" alt="no image" />
+            <img src="forward_icon.png" alt="no image" class="hide" />
+          </div>
+
+          <div class="sticky-nav-options">
+            <button class="badge hide">Explore premium</button>
+            <button class="badge dark">
+              <i class="fa-solid fa-arrow-down" style="margin-right: 8px"></i
+              >Install app
+            </button>
+            <i class="fa-regular fa-user"></i>
+          </div>
+        </div>
+
+        <h2>Recently Played</h2>
+        <div class="card-container">
+          <!-- <div class="card">
+            <img src="card1img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div> -->
+        </div>
+
+        <!-- <h2>Trending now near you</h2>
+        <div class="card-container">
+          <div class="card">
+            <img src="card2img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+          <div class="card">
+            <img src="card3img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+          <div class="card">
+            <img src="card4img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+          <div class="card">
+            <img src="card3img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+          <div class="card">
+            <img src="card4img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+        </div>
+
+        <h2>Featured Charts</h2>
+        <div class="card-container">
+          <div class="card">
+            <img src="card5img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+          <div class="card">
+            <img src="card6img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+          <div class="card">
+            <img src="card1img.jpeg" class="card-img" alt="no image" />
+            <p class="card-title">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played ...</p>
+          </div>
+        </div> -->
+        <div class="footer">
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <audio id="audio"></audio>
+
+      <!-- 1) Sidebar -->
+      <div class="music-player">
+        <div class="album">
+          <img src="card4img.jpeg" class="album-icon" alt="no image" />
+          <div class="singer">
+            <p>Daylight</p>
+            <p style="font-size: 0.65rem; opacity: 0.75">David Kushner</p>
+          </div>
+          <div class="album-icons">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-radio"></i>
+          </div>
+        </div>
+
+        <div class="player">
+          <div class="player-controls">
+            <img
+              src="player_icon1.png"
+              class="player-control-icon"
+              alt="no image"
+            />
+            <img
+              src="player_icon2.png"
+              class="player-control-icon"
+              alt="no image"
+              id="previoussong"
+            />
+            <img
+              src="player_icon3.png"
+              alt="no image"
+              id="playorpause"
+              class="player-control-icon"
+              style="opacity: 1; height: 2rem; width: 2rem"
+            />
+            <img
+              src="player_icon4.png"
+              class="player-control-icon"
+              alt="no image"
+              id="nextsong"
+            />
+            <img
+              src="player_icon5.png"
+              class="player-control-icon"
+              alt="no image"
+            />
+          </div>
+          <div class="playback-bar">
+            <span class="curr-time">00:00</span>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              class="progress-bar"
+              step="1"
+              placeholder="Search"
+            />
+            <span class="tot-time">03:38</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="control-icons">
+            <i class="fa-regular fa-square-caret-right"></i>
+            <i class="fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-clapperboard"></i>
+            <i class="fa-solid fa-volume-low"></i>
+          </div>
+          <input
+            type="range"
+            class="volm"
+            min="0"
+            max="100"
+            step="1"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
