@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ANAND-NAYAK-GIT/Spotify-Complete-FullStack-Project#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "ejs": "^6.0.1",
     "express": "^5.2.1"
   }

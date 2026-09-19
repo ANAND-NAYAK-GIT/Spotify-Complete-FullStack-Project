@@ -1,37 +1,37 @@
-const songs = [
-  {
-    id: 1,
-    title: "Esha nagula katta",
-    artist: "Anirudh",
-    cover: "card6img.jpeg", // reuse your existing image assets
-    src: "songs/track1.mp3", // path to actual audio file
-    duration: 3.12,
-  },
-  {
-    id: 2,
-    title: "Thassadiya",
-    artist: "Samantha",
-    cover: "card2img.jpeg",
-    src: "songs/track2.mp3",
-    duration: 3.12,
-  },
-  {
-    id: 3,
-    title: "Singari",
-    artist: "Anirudh",
-    cover: "card3img.jpeg", // reuse your existing image assets
-    src: "songs/track3.mp3", // path to actual audio file
-    duration: 3.12,
-  },
-  {
-    id: 4,
-    title: "Pilichina",
-    artist: "Mahesh babu",
-    cover: "card4img.jpeg",
-    src: "songs/track4.mp3",
-    duration: 3.12,
-  },
-];
+// const songs = [
+//   {
+//     id: 1,
+//     title: "Esha nagula katta",
+//     artist: "Anirudh",
+//     cover: "card6img.jpeg", // reuse your existing image assets
+//     src: "songs/track1.mp3", // path to actual audio file
+//     duration: 3.12,
+//   },
+//   {
+//     id: 2,
+//     title: "Thassadiya",
+//     artist: "Samantha",
+//     cover: "card2img.jpeg",
+//     src: "songs/track2.mp3",
+//     duration: 3.12,
+//   },
+//   {
+//     id: 3,
+//     title: "Singari",
+//     artist: "Anirudh",
+//     cover: "card3img.jpeg", // reuse your existing image assets
+//     src: "songs/track3.mp3", // path to actual audio file
+//     duration: 3.12,
+//   },
+//   {
+//     id: 4,
+//     title: "Pilichina",
+//     artist: "Mahesh babu",
+//     cover: "card4img.jpeg",
+//     src: "songs/track4.mp3",
+//     duration: 3.12,
+//   },
+// ];
 
 let audio = document.querySelector("#audio");
 let currentIndex = 0; // matches your current loadSong(songs[0]) call
@@ -51,31 +51,16 @@ function loadSong(song) {
   document.querySelector(".singer p:last-child").textContent = song.artist;
 }
 
-// Step 9
-let cardcontainer = document.querySelector(".card-container");
-songs.forEach((song, index) => {
-  let songcard = document.createElement("div");
-  songcard.setAttribute("class", "card");
-  let songimg = document.createElement("img");
-  songimg.setAttribute("class", "card-img");
-  let songtitle = document.createElement("p");
-  let songartist = document.createElement("p");
-
-  songimg.setAttribute("src", song.cover);
-  songtitle.textContent = song.title;
-  songartist.textContent = song.artist;
-
-  songcard.appendChild(songimg);
-  songcard.appendChild(songtitle);
-  songcard.appendChild(songartist);
-  cardcontainer.appendChild(songcard);
-
-  songcard.addEventListener("click", function () {
-    currentIndex = index;
-    loadSong(songs[index]);
-    playsong(audio);
-  });
-});
+async function fetchSongs() {
+  try {
+    const response = await fetch("http://localhost:8080/songs");
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    let error = "Some Error";
+    return error;
+  }
+}
 
 // Step 8 --> Manually control the volume in the app
 document.querySelector(".volm").addEventListener("input", function (e) {
@@ -160,4 +145,36 @@ function formatTime(time) {
   return formattedTime;
 }
 
-loadSong(songs[currentIndex]);
+let songs = fetchSongs();
+songs
+  .then((data) => {
+    songs = data;
+    let cardcontainer = document.querySelector(".card-container");
+    songs.forEach((song, index) => {
+      let songcard = document.createElement("div");
+      songcard.setAttribute("class", "card");
+      let songimg = document.createElement("img");
+      songimg.setAttribute("class", "card-img");
+      let songtitle = document.createElement("p");
+      let songartist = document.createElement("p");
+
+      songimg.setAttribute("src", song.cover);
+      songtitle.textContent = song.title;
+      songartist.textContent = song.artist;
+
+      songcard.appendChild(songimg);
+      songcard.appendChild(songtitle);
+      songcard.appendChild(songartist);
+      cardcontainer.appendChild(songcard);
+
+      songcard.addEventListener("click", function () {
+        currentIndex = index;
+        loadSong(songs[index]);
+        playsong(audio);
+      });
+    });
+    loadSong(data[currentIndex]);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
